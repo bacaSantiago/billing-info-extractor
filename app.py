@@ -53,6 +53,7 @@ st.write(
     "Upload one or more CFDI XML files, and the app will extract **UUID** and **Total** "
     "in alphabetical order and generate a CSV."
 )
+st.write("<br>", unsafe_allow_html=True)
 
 uploaded_files = st.file_uploader(
     "Upload XML files",
@@ -60,7 +61,7 @@ uploaded_files = st.file_uploader(
     accept_multiple_files=True
 )
 
-include_filename = st.checkbox("Include source filename column", value=True)
+include_filename = st.checkbox("Include source filename column", value=False)
 
 if uploaded_files:
     sorted_files = sort_uploaded_files_alphabetically(uploaded_files)
