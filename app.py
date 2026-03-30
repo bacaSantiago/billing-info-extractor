@@ -106,6 +106,8 @@ if uploaded_files:
     writer.writerows(rows)
     csv_content = csv_output.getvalue().encode("utf-8")
 
+    st.write("<br>", unsafe_allow_html=True)
+    
     st.download_button(
         label="Download CSV",
         data=csv_content,
